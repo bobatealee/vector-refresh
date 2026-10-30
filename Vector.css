@@ -264,6 +264,10 @@ html, body {
 	padding:0px;
 }
 
+#left-navigation nav, #right-navigation nav, #left-navigation li, #right-navigation li {
+	background:none;
+}
+
 #left-navigation a, #right-navigation a, #right-navigation #p-cactions, #right-navigation #p-search {
 	display:flex;
 	justify-content:center;
