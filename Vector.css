@@ -1,0 +1,400 @@
+/* ================================================ */
+/* VECTOR REFRESH - a MediaWiki skin by Liam Stone  */
+/* ================================================ */
+/* This works as a drop-in add-on for Vector Legacy */
+/* (2010). Simply replace the contents of the page  */
+/* MediaWiki:Vector.css, and modify as needed. =)   */
+/* ================================================ */
+
+/* ======================== */
+/* GENERIC STYLING          */
+/* ======================== */
+
+:root {
+	--mainGap:32px;
+
+	/* Header */
+	--headerHeight:64px;
+	--headerGap:32px;
+	--headerButtonSize:14px;
+	--headerSpacing:8px;
+
+	--userIconSize:20px;
+
+	/* Logo */
+	--logoWidth:200px;
+	--logoHeight:200px;
+	--logoGap:32px;
+
+	/* Sidebar */
+	--sidebarWidth:200px;
+	--sidebarGap:16px;
+	--sidebarPadding:16px;
+	--sidebarHeaderSize:20px;
+	--sidebarButtonSize:14px;
+	--sidebarSpacing:8px;
+
+	/* Navigation */
+	--navigationHeight:50px;
+	--navigationButtonSize:16px;
+
+	--watchWidth:50px;
+	--watchIconSize:20px;
+
+	--moreIconSize:20px;
+
+	--searchWidth:300px;
+	--searchHeight:30px;
+	--searchSpacing:8px;
+	--searchIconSize:20px;
+
+	/* Content */
+	--contentSpacing:24px;
+
+	/* Footer */
+	--footerGap:32px;
+	--footerButtonSize:14px;
+	--footerSpacing:16px;
+
+	--footerLinkSpacing:8px;
+}
+
+html, body {
+	height:unset;
+}
+
+/* ======================== */
+/* HEADER BAR               */
+/* ======================== */
+
+#mw-page-base {
+	height:var(--headerHeight);
+}
+
+#p-personal {
+	top:0px;
+	left:0px;
+	z-index:1;
+	background:#BBBBBB;
+	width:100%;
+	height:var(--headerHeight);
+}
+
+#p-personal div, #p-personal ul {
+	height:100%;
+}
+
+#p-personal ul {
+	display:flex;
+	justify-content:flex-end;
+	align-items:center;
+	gap:var(--headerSpacing);
+	padding:0px;
+	padding:0px var(--mainGap);
+}
+
+#p-personal ul * {
+	margin:0px;
+	padding:0px;
+	font-size:var(--headerButtonSize);
+}
+
+#p-personal #pt-userpage a {
+	display:flex;
+	align-items:center;
+	background-position:left;
+	background-size:contain;
+	padding:0px 0px 0px calc(var(--userIconSize) + 4px);
+	min-height:var(--userIconSize);
+}
+
+/* ======================== */
+/* LOGO                     */
+/* ======================== */
+
+#mw-navigation {
+	position:absolute;
+	top:0px;
+	width:100%;
+	height:0px;
+}
+
+#mw-panel {
+	position:unset;
+	margin-top:var(--sidebarOffset) !important;
+	padding-bottom:var(--mainGap) !important;
+	padding:0px;
+	width:calc(var(--mainGap) + var(--sidebarWidth) + var(--sidebarGap));
+}
+
+#p-logo {
+	display:flex;
+	position:absolute;
+	z-index:1;
+	filter:drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
+	margin:0px;
+	width:100%;
+	height:auto;
+}
+
+#p-logo a {
+	background-size:contain;
+	width:var(--logoWidth);
+	height:var(--logoHeight);
+}
+
+#p-logo a:hover, #p-logo a:focus {
+	filter:brightness(1.15);
+}
+
+#p-logo a:active {
+	filter:brightness(0.85);
+}
+
+/* ======================== */
+/* SIDEBAR LOGO             */
+/* ======================== */
+
+/* :root {
+	--topOffset:calc(var(--headerHeight) + var(--headerGap));
+	--sidebarOffset:calc(var(--logoHeight) / (var(--logoWidth) / var(--sidebarWidth)) + var(--sidebarGap) * 2);
+}
+
+#p-logo {
+	top:var(--sidebarGap);
+	left:var(--mainGap);
+}
+
+#p-logo, #p-logo a {
+	width:var(--sidebarWidth);
+	height:calc(var(--logoHeight) / (var(--logoWidth) / var(--sidebarWidth)));
+} */
+
+/* ======================== */
+/* CENTERED LOGO            */
+/* ======================== */
+
+:root {
+	--topOffset:calc(var(--headerHeight) + var(--headerGap) + var(--logoHeight) + var(--logoGap));
+	--sidebarOffset:var(--topOffset);
+}
+
+#p-logo {
+	top:calc(var(--headerHeight) + var(--headerGap));
+	justify-content:center;
+}
+
+/* ======================== */
+/* SIDEBAR                  */
+/* ======================== */
+
+#mw-panel nav {
+	box-sizing:border-box;
+	margin:0px;
+	margin-bottom:var(--sidebarGap);
+	margin-left:var(--mainGap);
+	background:#DDDDDD;
+	padding:0px;
+	padding:var(--sidebarPadding);
+	width:var(--sidebarWidth);
+}
+
+#mw-panel nav:last-of-type {
+	margin-bottom:unset;
+}
+
+#mw-panel nav h3 {
+	display:block !important;
+	margin:0px;
+	margin-bottom:var(--sidebarSpacing);
+	background:none;
+	padding:0px;
+	font-size:var(--sidebarHeaderSize);
+}
+
+#mw-panel nav div {
+	margin:0px;
+}
+
+#mw-panel nav ul {
+	display:flex;
+	flex-direction:column;
+	gap:var(--sidebarSpacing);
+	padding:0px;
+}
+
+#mw-panel nav li {
+	padding:0px;
+	font-size:var(--sidebarButtonSize);
+}
+
+/* ======================== */
+/* NAVIGATION TABS          */
+/* ======================== */
+
+#mw-head-base {
+	margin-top:calc(var(--topOffset) - var(--headerHeight));
+	margin-right:var(--mainGap);
+	margin-left:calc(var(--mainGap) + var(--sidebarWidth) + var(--sidebarGap));
+	background:#BBBBBB;
+	height:var(--navigationHeight);
+}
+
+#mw-head {
+	height:var(--topOffset);
+}
+
+#left-navigation, #right-navigation {
+	position:absolute;
+	bottom:calc(0px - var(--navigationHeight));
+	margin:0px;
+	height:var(--navigationHeight);
+}
+
+#left-navigation {
+	left:calc(var(--mainGap) + var(--sidebarWidth) + var(--sidebarGap));
+}
+
+#right-navigation {
+	right:var(--mainGap);
+}
+
+#left-navigation *, #right-navigation * {
+	margin:0px;
+	padding:0px;
+}
+
+#left-navigation a, #right-navigation a, #right-navigation #p-cactions, #right-navigation #p-search {
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	box-sizing:border-box;
+	background:#DDDDDD;
+	padding:0px 8px;
+	height:var(--navigationHeight);
+}
+
+#left-navigation a, #right-navigation a, #right-navigation #p-cactions-label {
+	font-size:var(--navigationButtonSize);
+}
+
+/* ======================== */
+/* NAVIGATION - WATCHLIST   */
+/* ======================== */
+
+#right-navigation .mw-watchlink a {
+	min-width:var(--watchWidth);
+	font-size:0px;
+}
+
+#right-navigation .mw-watchlink a:before {
+	top:unset;
+	left:unset;
+	background-size:contain;
+	width:100%;
+	height:var(--watchIconSize);
+}
+
+/* ======================== */
+/* NAVIGATION - MORE        */
+/* ======================== */
+
+#right-navigation #p-cactions-label {
+	display:flex;
+	align-items:center;
+	outline:none;
+	background:none;
+	min-height:var(--moreIconSize);
+}
+
+#right-navigation #p-cactions-label:after {
+	margin-left:4px;
+	background-size:contain;
+	width:var(--moreIconSize);
+	height:var(--moreIconSize);
+}
+
+#right-navigation #p-cactions div {
+	box-shadow:none;
+	border:none;
+}
+
+/* ======================== */
+/* NAVIGATION - SEARCH      */
+/* ======================== */
+
+#simpleSearch {
+	width:var(--searchWidth);
+	min-width:unset;
+	max-width:unset;
+	height:var(--searchHeight);
+}
+
+#simpleSearch #searchInput {
+	border:none;
+	border-radius:unset;
+	background:#BBBBBB;
+	padding:0px calc(var(--searchIconSize) + var(--searchSpacing) * 2) 0px var(--searchSpacing);
+}
+
+#simpleSearch #searchButton {
+	top:calc((var(--searchHeight) - var(--searchIconSize)) / 2);
+	right:var(--searchSpacing);
+	background-size:contain;
+	width:var(--searchIconSize);
+	min-width:unset;
+	height:var(--searchIconSize);
+}
+
+/* ======================== */
+/* MAIN CONTENT             */
+/* ======================== */
+
+#content {
+	margin-top:0px;
+	margin-right:var(--mainGap);
+	margin-left:calc(var(--mainGap) + var(--sidebarWidth) + var(--sidebarGap));
+	border:0px;
+	padding:var(--contentSpacing);
+}
+
+/* ======================== */
+/* FOOTER                   */
+/* ======================== */
+
+#footer {
+	display:flex;
+	position:relative;
+	flex-direction:column;
+	margin-top:var(--footerGap);
+	margin-right:var(--mainGap);
+	margin-bottom:var(--mainGap);
+	margin-left:calc(var(--mainGap) + var(--sidebarWidth) + var(--sidebarGap));
+	background:#BBBBBB;
+	padding:var(--mainGap);
+}
+
+#footer li {
+	margin:0px;
+	margin-bottom:var(--footerSpacing);
+}
+
+#footer #footer-places {
+	display:flex;
+	gap:var(--footerLinkSpacing);
+}
+
+#footer #footer-places li {
+	margin:0px;
+}
+
+#footer #footer-icons {
+	display:none;
+}
+
+#footer * {
+	margin:0px;
+	padding:0px;
+	font-size:var(--footerButtonSize);
+	line-height:normal !important;
+}
