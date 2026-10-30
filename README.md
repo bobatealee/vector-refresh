@@ -3,7 +3,9 @@
 
 *Vector Refresh* is a skin for MediaWiki that works as a drop-in add-on for Vector Legacy (2010).
 
-The goal of this skin is to offer a modern, easily modifiable layout base on top of Vector Legacy (2010), which is often the default skin for many MediaWiki projects. It is not intended to be used on its own; give it your own fresh coat of paint!
+The goal of this skin is to offer a modern, easily modifiable layout base on top of Vector Legacy (2010), which is often the default skin for many MediaWiki projects.
+
+It is not really intended to be used on its own; give it your own fresh coat of paint!
 
 ## Screenshots
 
@@ -22,9 +24,9 @@ The goal of this skin is to offer a modern, easily modifiable layout base on top
 
 ## Requirements
 - MediaWiki 1.38+
-- Vector Legacy (2010) skin
+- Vector Legacy (2010) skin enabled
 
 ## Usage
-To start using Vector Refresh, simply replace the contents of the page `MediaWiki:Vector.css`.
+To start using Vector Refresh, simply replace the contents of the page `MediaWiki:Vector.css` with the CSS file found in this repository.
 
 If your wiki now looks kind of ugly, terrific! You should then be good to go in terms of modifying the contents as you see fit to make your wiki appearance truly yours.
