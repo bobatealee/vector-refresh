@@ -89,7 +89,6 @@ html, body {
 	justify-content:flex-end;
 	align-items:center;
 	gap:var(--headerSpacing);
-	padding:0px;
 	padding:0px var(--mainGap);
 }
 
