@@ -193,7 +193,6 @@ html, body {
 	margin-bottom:var(--sidebarGap);
 	margin-left:var(--mainGap);
 	background:#DDDDDD;
-	padding:0px;
 	padding:var(--sidebarPadding);
 	width:var(--sidebarWidth);
 }
