@@ -280,6 +280,10 @@ html, body {
 	font-size:var(--navigationButtonSize);
 }
 
+.emptyPortlet {
+	display:none !important;
+}
+
 /* ======================== */
 /* NAVIGATION - WATCHLIST   */
 /* ======================== */
